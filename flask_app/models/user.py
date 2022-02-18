@@ -30,3 +30,7 @@ class User:
     def save(cls, data):
         query = "INSERT INTO users (first_name, last_name, email) VALUES (%(first_name)s , %(last_name)s , %(email)s);"
         return connectToMySQL(DATABASE).query_db(query, data)
+
+    @staticmethod
+    def validator():
+        is_valid = True
