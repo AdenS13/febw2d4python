@@ -27,15 +27,19 @@ form {
     padding: 20px 0;
 }
 
-form label {
-    font-weight: 600;
+.label_input {
+    display: flex;
+    flex-direction: column;
 }
 
 input {
     padding: 4px;
 }
 
-.btn {
-    margin-top: 10px;
-    width: 100px;
+label {
+    font-weight: 600;
+}
+
+.links input {
+    margin-right: 10px;
 }

@@ -27,3 +27,18 @@ def create_friend():
     User.save(data)
 
     return redirect('/users/')
+
+@app.route('/user/<int:id>/')
+def show_user(id):
+    user = User.get_one({'id': id})
+    return render_template("show_user.html", user=user)
+
+@app.route('/user/<int:id>/edit')
+def edit_user(id):
+    user = User.get_one({'id':id})
+    return render_template('edit_user.html', user=user)
+
+@app.route('/users/<int:id>/update', methods=["POST"])
+def update_user(id):
+    User.update_one(request.form)
+    return redirect('/users/')

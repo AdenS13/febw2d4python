@@ -1,4 +1,5 @@
 
+from sqlite3 import connect
 from flask_app.config.mysqlconnection import connectToMySQL
 
 
@@ -31,6 +32,15 @@ class User:
         query = "INSERT INTO users (first_name, last_name, email) VALUES (%(first_name)s , %(last_name)s , %(email)s);"
         return connectToMySQL(DATABASE).query_db(query, data)
 
-    @staticmethod
-    def validator():
-        is_valid = True
+    @classmethod
+    def get_one(cls, data):
+        query = "SELECT * FROM users WHERE users.id = %(id)s"
+        result = connectToMySQL(DATABASE).query_db(query, data)
+        if result:
+            return cls(result[0])
+        return False
+
+    @classmethod
+    def update_one(cls, data):
+        query = "UPDATE users SET first_name = %(first_name)s, last_name=%(last_name)s, email=%(email)s WHERE id = %(id)s"
+        return connectToMySQL(DATABASE).query_db(query, data)

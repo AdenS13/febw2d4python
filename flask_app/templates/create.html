@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,10 @@
 </head>
 
 <body>
-    <h1>ADD A NEW USER</h1>
+    <div class="nav">
+        <h1>ADD A NEW USER</h1>
+        <h3><a href="/users/">Home</a></h3>
+    </div>
     <form action="/users/new/new" method="POST">
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name">
@@ -17,7 +21,8 @@
         <input type="text" name="last_name">
         <label for="email">Email:</label>
         <input type="text" name="email">
-        <input type="submit" value="Add Friend">
+        <input type="submit" value="Add Friend" class="btn">
     </form>
 </body>
+
 </html>

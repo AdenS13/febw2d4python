@@ -18,24 +18,17 @@ body {
     justify-content: space-between;
 }
 
-form {
+main {
+    margin-top: 20px;
+    border: black 2px solid;
     width: 400px;
     height:  250px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 20px 0;
+    padding: 20px;
 }
 
-form label {
-    font-weight: 600;
-}
-
-input {
-    padding: 4px;
-}
-
-.btn {
-    margin-top: 10px;
-    width: 100px;
+.links {
+    margin: 10px 0 0 0;
 }
